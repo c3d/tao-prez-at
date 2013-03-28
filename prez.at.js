@@ -3,7 +3,7 @@ var http = require('http'),
     ioclient = require('socket.io-client');
 
 var logger = new (winston.Logger)({
-        transports: [ new winston.transports.Console({ level:'debug' }) ],
+        transports: [ new winston.transports.Console({ level:'info' }) ],
         levels: {
             debug: 0,
             info: 1,
