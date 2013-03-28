@@ -1,0 +1,23 @@
+// PrezAt module definition
+//
+// Connect to your NodeJS-enabled presentations through http://prez.at/ 
+//
+// Copyright 2013 Taodyne SAS
+
+module_description
+    id "00455830-8014-4BFA-A639-889D80A26F4C" 
+    name "prez.at interface"
+    description "Connect to your NodeJS-enabled presentations through http://prez.at/"
+    import_name "PrezAt"
+    author "Taodyne SAS"
+    website "http://www.taodyne.com"
+    version 1.0
+
+
+module_description "fr",
+    name "Interface prez.at"
+    description "Connectez-vous à vos présentations utilisant NodeJS par l'intermédiaire de http://prez.at/"
+
+
+prez_at_js_path -> ""
+prez_at_js_path := module_dir & "/prez.at.js"
