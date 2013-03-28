@@ -11,27 +11,20 @@ var logger = new (winston.Logger)({
         }
     });
 
-// gateway.host, gateway.port
+// gateway: url
 // callback(err, socket, publicUrl)
 function connectToPrezGateway(gateway, seed, localHttpPort, callback) {
 
     var publicUrl = '';
-    var socket = ioclient.connect(gateway.host, { port: gateway.port });
+    var socket = ioclient.connect(gateway);
 
     socket.on('connect', function() {
 
         logger.debug('socket.io client connected to gateway');
 
         socket.emit('register', seed, function(id) {
-
-            publicUrl = 'http://' + gateway.host;
-            if (gateway.port !== 80) {
-                publicUrl += ':' + gateway.port;
-            }
-            publicUrl += '/' + id;
-
+            publicUrl = gateway + '/' + id;
             logger.debug('Prez registered, public url: ' + publicUrl);
-
             callback(null, socket, publicUrl);
         });
     });
