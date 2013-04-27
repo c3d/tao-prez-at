@@ -32,7 +32,7 @@ INSTALLS += install_extra
 # Created by 'npm install' which REQUIRES AN INTERNET CONNECTION
 PRE_TARGETDEPS = node_modules/.inst
 node_modules.target = node_modules/.inst
-node_modules.commands = npm install socket.io-client@0.9.11 winston@0.6.2 && touch node_modules/.inst
+node_modules.commands = npm install socket.io-client winston && touch node_modules/.inst
 QMAKE_EXTRA_TARGETS += node_modules
 distclean_rm_node_modules.commands = rm -rf ./node_modules/* ./node_modules/.inst
 distclean.depends = distclean_rm_node_modules
